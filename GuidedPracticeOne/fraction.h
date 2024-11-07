@@ -1,8 +1,8 @@
 /*
 Fraction.h
 David Gutierrez
-Guided Practice 2
-10/24/2024
+Guided Practice 3
+11/07/24
 */
 
 #ifndef FRACTION
@@ -19,11 +19,25 @@ public:
 	Fraction mult(const Fraction& f);
 	Fraction div(const Fraction& f);
 	void printFraction();
-	
+
+	//accessors
+	int getNum() const;
+	int getDen() const;
+
+
 	//constructor
 	Fraction();
 	Fraction(int n, int d);
 	Fraction(std::string frac);
+
+
+	//opertator overloading
+	Fraction operator+(const Fraction& f);
+	Fraction operator-(const Fraction& f);
+	Fraction operator*(const Fraction& f);
+	Fraction operator/(const Fraction& f);
+	Fraction& operator=(const Fraction& f);
+
 };
 
 

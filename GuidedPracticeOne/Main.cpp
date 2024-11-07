@@ -1,36 +1,36 @@
 /*
 Main.cpp
 David Gutierrez
-Guided Practice 2
-10/24/2024
+Guided Practice 3
+11/07/24
 */
 
 
 #include <iostream>
 #include "fraction.h"
+#include <string>
 
 using namespace std;
 
 int main() {
-	Fraction f1(1,4), f2(1,4), f3, f4(3, 16), f5("3/4");
+	string test = "3/8";
 
 
-	f3 = f1.add(f2);
+	Fraction f1(test);
+	Fraction f2;
+	f2 = f1;
+
+	Fraction f3 = f1 + f2;
 	f3.printFraction();
 
-	f3 = f1.sub(f2);
-	f3.printFraction();
-
-	f3 = f1.mult(f2);
-	f3.printFraction();
-
-	f3 = f1.div(f2);
-	f3.printFraction();
-
+	Fraction f4 = f1 - f2;
 	f4.printFraction();
+
+	Fraction f5 = f1 * f2;
 	f5.printFraction();
 
-
+	Fraction f6 = f1 / f2;
+	f6.printFraction();
 
 	return 0;
 }

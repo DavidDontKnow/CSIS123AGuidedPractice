@@ -1,8 +1,8 @@
 /*
 Fraction.cpp
 David Gutierrez
-Guided Practice 2
-10/24/2024
+Guided Practice 3
+11/07/24
 */
 
 #include <iostream>
@@ -50,7 +50,7 @@ Fraction Fraction::sub(const Fraction& f) {
 }
 
 void Fraction::printFraction() {
-	cout << num << "/" << den << endl;
+	cout << getNum() << "/" << getDen() << endl;
 }
 
 Fraction Fraction::mult(const Fraction& f) {
@@ -66,3 +66,34 @@ Fraction Fraction::div(const Fraction& f) {
 	tmp.den = den * this->num;
 	return tmp;
 }
+
+Fraction Fraction::operator+(const Fraction& f) {
+	return this->add(f);
+}
+
+Fraction Fraction::operator-(const Fraction& f) {
+	return this->sub(f);
+}
+
+Fraction Fraction::operator*(const Fraction& f) {
+	return this->mult(f);
+}
+
+Fraction Fraction::operator/(const Fraction& f) {
+	return this->div(f);
+}
+
+Fraction& Fraction::operator=(const Fraction& f) {
+	this->setFraction(f.getNum(), f.getDen());
+	return *this;
+}
+
+
+int Fraction::getNum() const {
+	return this->num;
+}
+
+int Fraction::getDen() const {
+	return this->den;
+}
+
