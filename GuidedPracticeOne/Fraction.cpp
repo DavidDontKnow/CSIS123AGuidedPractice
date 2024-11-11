@@ -1,8 +1,8 @@
 /*
 Fraction.cpp
 David Gutierrez
-Guided Practice 3
-11/07/24
+Guided Practice 4
+11/11/24
 */
 
 #include <iostream>
@@ -88,6 +88,26 @@ Fraction& Fraction::operator=(const Fraction& f) {
 	return *this;
 }
 
+
+std::istream& operator>>(std::istream& input, Fraction& f) {
+	cout << "Enter the numerator: ";
+	std::cin >> f.num;
+	cout << "Enter the denominator: ";
+	//check for 0
+	do {
+		std::cin >> f.den;
+		if (f.den == 0) {
+			cout << "Denominator cannot be 0. Please enter a new value: ";
+		}
+	} while (f.den == 0);
+
+	return input;
+}
+
+std::ostream& operator<<(std::ostream& output, Fraction& f) {
+	output << f.getNum() << "/" << f.getDen() << endl;
+	return output;
+}
 
 int Fraction::getNum() const {
 	return this->num;

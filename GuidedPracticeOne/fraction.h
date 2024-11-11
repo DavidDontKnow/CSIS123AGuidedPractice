@@ -1,12 +1,15 @@
 /*
 Fraction.h
 David Gutierrez
-Guided Practice 3
-11/07/24
+Guided Practice 4
+11/11/24
 */
 
 #ifndef FRACTION
 #define FRACTION
+
+#include <string>
+#include <iostream>
 
 class Fraction {
 private:
@@ -37,6 +40,12 @@ public:
 	Fraction operator*(const Fraction& f);
 	Fraction operator/(const Fraction& f);
 	Fraction& operator=(const Fraction& f);
+
+	friend std::ostream& operator<<(std::ostream& output, Fraction& f);
+	friend std::istream& operator>>(std::istream& input, Fraction& f);
+
+	//friend function
+	
 
 };
 
